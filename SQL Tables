@@ -1,7 +1,40 @@
-Create Table Vaccine(
+CREATE TABLE Vaccine(
 country_name VARCHAR(255),
-vaccine_type VARCHAR(255),
+vaccine_type VARCHAR(255) IS NOT NULL PRIMARY KEY,
 infected INT,
 deaths INT,
 vaccinated INT
+);
+
+CREATE TABLE User(
+UserId INT IS NOT NULL PRIMARY KEY,
+firstName VARCHAR(255),
+LastName VARCHAR(255),
+email VARCHAR(255),
+phone float
+Citizen VARCHAR(255)
+);
+
+CREATE TABLE Countries (
+ConntryName IS NOT NULL PRIMARY KEY,
+population INT,
+deaths INT,
+infected INT
+);
+
+
+CREATE TABLE Article(
+publishdate DATE,
+paragraphs VARCHAR(255),
+summary CHAR(100),
+major_topic VARCHAR(255),
+minor_topic VARCHAR(255),
+
+
+);
+
+CREATE TABLE Organisations(
+OID INT IS NOT NULL PRIMARY KEY,
+name VARCHAR(255),
+Type VARCHAR(255)
 );
