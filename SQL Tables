@@ -40,7 +40,7 @@ Type VARCHAR(255)
 );
 
 CREATE TABLE Regions(
-    RegionName VARCHAR(255) IS NOT NULL PRIMARY KEY
+    RegionName VARCHAR(255) 
     regionID INT IS NOT NULL PRIMARY KEY
 );
 
