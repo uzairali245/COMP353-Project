@@ -12,25 +12,25 @@ firstName VARCHAR(255),
 LastName VARCHAR(255),
 email VARCHAR(255),
 phone float
-Citizen VARCHAR(255)
+Citizenship VARCHAR(255)
 );
 
 CREATE TABLE Countries (
-ConntryName IS NOT NULL PRIMARY KEY,
+CountryName IS NOT NULL PRIMARY KEY,
 population INT,
 deaths INT,
 infected INT
+infected_notVax INT
+totalVaxxed INT
 );
 
 
 CREATE TABLE Article(
-publishdate DATE,
+publishDate DATE,
 paragraphs VARCHAR(255),
 summary CHAR(100),
 major_topic VARCHAR(255),
 minor_topic VARCHAR(255),
-
-
 );
 
 CREATE TABLE Organisations(
@@ -38,3 +38,19 @@ OID INT IS NOT NULL PRIMARY KEY,
 name VARCHAR(255),
 Type VARCHAR(255)
 );
+
+CREATE TABLE Regions(
+    RegionName VARCHAR(255) IS NOT NULL PRIMARY KEY
+    regionID INT IS NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE Author(
+ name VARCHAR(255)
+ aID INT IS NOT NULL PRIMARY KEY
+);
+
+
+CREATE TABLE Researcher(
+    rID INT IS NOT NULL PRIMARY KEY
+);
+
