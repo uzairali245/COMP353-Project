@@ -1,0 +1,7 @@
+Create Table Vaccine(
+country_name VARCHAR(255),
+vaccine_type VARCHAR(255),
+infected INT,
+deaths INT,
+vaccinated INT
+);
