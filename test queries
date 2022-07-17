@@ -51,13 +51,13 @@ ORDER BY Vaccine.deaths ASC;
 
 
 --viii
-SELECT userType, firstName, LastName, email, phone,dob,Citizenship
-FROM User
+SELECT userType, firstName, LastName, email, phone,dob,Citizenship,
 CASE
     WHEN userType = 'organization delegate' THEN 
         (SELECT orgName
          FROM Organisations)
 END
+FROM User
 ORDER BY userType, Citizenship, dob;
 
 --ix
