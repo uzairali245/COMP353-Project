@@ -24,7 +24,8 @@ INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('idk',1,4,7,2);
 
 
-1
+--1
+
 SELECT RegionName,SUM(population), SUM(totalVaxxed), SUM(deaths)
 FROM Countries JOIN  Regions ON Countries.rID=Regions.rID 
 WHERE Countries.population>1
@@ -32,15 +33,15 @@ Group BY Regions.RegionName
 ORDER BY SUM(population) ASC;
 
 
-2
+--2
 
 SELECT RegionName, CountryName, population, totalVaxxed , deaths
 FROM Countries, Regions
 WHERE Regions.rID = Countries.rID
 GROUP BY CountryName
-ORDER BY Regions.RegionName ASC, countries.CountryName ASC;
+ORDER BY Regions.regionName ASC, Countries.CountryName ASC;
 
-3
+--3
 
 SELECT Regions.RegionName, Vaccine.vaccine_type, SUM(Vaccine.deaths), SUM(Vaccine.vaccinated)
 FROM Countries, Regions, Vaccine
@@ -48,9 +49,40 @@ WHERE Regions.rID = Countries.rID AND Vaccine.cID = Countries.cID -- AND regions
 GROUP BY Regions.RegionName, vaccine.vaccine_type
 ORDER BY Vaccine.deaths ASC;
 
+--4
 
---viii
-SELECT userType, firstName, LastName, email, phone,dob,Citizenship,
+SELECT regionName, population, resID, articles
+FROM Regions, Researchers, Articles
+WHERE 
+GROUP BY Researcher.resID AND Region.regionName
+ORDER BY AVG() AND Regions.regionName ASC
+
+--5
+
+SELECT publishDate, population, totalVaxxed, infected, deaths
+FROM Regions, Countries
+WHERE Countries = 'Canada'
+GROUP BY 
+ORDER BY publishDate DESC
+
+--6
+
+SELECT 
+FROM 
+WHERE 
+GROUP BY 
+ORDER BY 
+
+--7
+
+SELECT 
+FROM 
+GROUP BY 
+ORDER BY 
+
+--8
+
+SELECT userType, firstName, LastName, email, phone, dob, Citizenship,
 CASE
     WHEN userType = 'organization delegate' THEN 
         (SELECT orgName
@@ -59,13 +91,15 @@ END
 FROM User
 ORDER BY userType, Citizenship, dob;
 
---ix
+--9
+
 SELECT firstName, LastName, email, phone, dob, Citizenship, COUNT(Article) AS totalArticles
 FROM User, Article, Researcher
 WHERE Article.aID = Researcher.aID
 GROUP BY Researcher;
 
---x
+--10
+
 SELECT firstName, LastName, email, phone, dob, Citizenship
 FROM User
 WHERE User.UserID = Researcher.UserID
