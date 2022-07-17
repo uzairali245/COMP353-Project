@@ -38,7 +38,7 @@ SELECT RegionName, CountryName, population, totalVaxxed , deaths
 FROM Countries, Regions
 WHERE Regions.rID = Countries.rID
 GROUP BY CountryName
-ORDER BY Regions.RegionName AND Countries.CountryName ASC; -- Not sure about the order though
+ORDER BY Regions.RegionName ASC, countries.CountryName ASC;
 
 3
 
