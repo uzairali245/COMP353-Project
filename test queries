@@ -1,0 +1,14 @@
+
+INSERT INTO Regions (RegionName,rID)
+VALUES ('North America',111);
+
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, infectednotVAX, totalVaxxed, rID)
+VALUES ('Canada',11,12,3,5,6, 4,111);
+
+INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
+VALUES ('moderna',3,4,7,11);
+
+SELECT *
+FROM Countries a, Vaccine b
+WHERE a.cID=b.cID; 
+

@@ -16,13 +16,13 @@ FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
 CREATE TABLE Vaccine(
-country_name VARCHAR(255),
 vaccine_type VARCHAR(255)  NOT NULL PRIMARY KEY,
 infected INT,
 deaths INT,
 vaccinated INT,
 cID INT,
-FOREIGN KEY (cID) REFERENCES Countries(cID)
+  FOREIGN KEY (cID) REFERENCES Countries(cID)
+
 );
 
 CREATE TABLE User(
