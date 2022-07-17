@@ -1,28 +1,49 @@
-CREATE TABLE Vaccine(
-country_name VARCHAR(255),
-vaccine_type VARCHAR(255) IS NOT NULL PRIMARY KEY,
-infected INT,
-deaths INT,
-vaccinated INT
-);
-
-CREATE TABLE User(
-UserId INT IS NOT NULL PRIMARY KEY,
-firstName VARCHAR(255),
-LastName VARCHAR(255),
-email VARCHAR(255),
-phone float
-Citizenship VARCHAR(255)
+CREATE TABLE Regions(
+    RegionName VARCHAR(255), 
+    rID INT  NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Countries (
-CountryName IS NOT NULL PRIMARY KEY,
+CountryName VARCHAR (255),
+cID INT  NOT NULL PRIMARY KEY,
 population INT,
 deaths INT,
-infected INT
-infected_notVax INT
-totalVaxxed INT
+infected INT,
+infectednotVax INT,
+totalVaxxed INT,
+rID int,
+FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
+
+
+
+
+
+
+
+CREATE TABLE Vaccine(
+country_name VARCHAR(255),
+vaccine_type VARCHAR(255)  NOT NULL PRIMARY KEY,
+infected INT,
+deaths INT,
+vaccinated INT,
+cID,
+FOREIGN KEY (cID) REFERENCES Countries(cID)
+
+);
+
+
+
+CREATE TABLE User(
+UserId INT  NOT NULL PRIMARY KEY,
+firstName VARCHAR(255),
+LastName VARCHAR(255),
+email VARCHAR(255),
+phone float,
+Citizenship VARCHAR(255),
+
+);
+
 
 
 CREATE TABLE Article(
@@ -34,23 +55,20 @@ minor_topic VARCHAR(255),
 );
 
 CREATE TABLE Organisations(
-OID INT IS NOT NULL PRIMARY KEY,
+OID INT  NOT NULL PRIMARY KEY,
 name VARCHAR(255),
 Type VARCHAR(255)
 );
 
-CREATE TABLE Regions(
-    RegionName VARCHAR(255) 
-    regionID INT IS NOT NULL PRIMARY KEY
-);
+
 
 CREATE TABLE Author(
- name VARCHAR(255)
- aID INT IS NOT NULL PRIMARY KEY
+ name VARCHAR(255),
+ aID INT  NOT NULL PRIMARY KEY
 );
 
 
 CREATE TABLE Researcher(
-    rID INT IS NOT NULL PRIMARY KEY
+    rID INT  NOT NULL PRIMARY KEY
 );
 
