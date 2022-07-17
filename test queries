@@ -40,6 +40,15 @@ WHERE Regions.rID = Countries.rID
 GROUP BY CountryName
 ORDER BY Regions.RegionName AND Countries.CountryName ASC; -- Not sure about the order though
 
+3
+
+SELECT Regions.
+RegionName, Vaccine.vaccine_type, Vaccine.deaths, Vaccine.vaccinated
+FROM Countries, Regions, Vaccine
+WHERE Regions.rID = Countries.rID AND Vaccine.cID = Countries.cID
+GROUP BY Regions.RegionName
+ORDER BY Vaccine.deaths ASC;
+
 
 --viii
 SELECT userType, firstName, LastName, email, phone,dob,Citizenship
