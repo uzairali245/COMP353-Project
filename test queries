@@ -42,11 +42,10 @@ ORDER BY Regions.RegionName ASC, countries.CountryName ASC;
 
 3
 
-SELECT Regions.
-RegionName, Vaccine.vaccine_type, Vaccine.deaths, Vaccine.vaccinated
+SELECT Regions.RegionName, Vaccine.vaccine_type, SUM(Vaccine.deaths), SUM(Vaccine.vaccinated)
 FROM Countries, Regions, Vaccine
-WHERE Regions.rID = Countries.rID AND Vaccine.cID = Countries.cID
-GROUP BY Regions.RegionName
+WHERE Regions.rID = Countries.rID AND Vaccine.cID = Countries.cID -- AND regions.regionName = 'North America'
+GROUP BY Regions.RegionName, vaccine.vaccine_type
 ORDER BY Vaccine.deaths ASC;
 
 
