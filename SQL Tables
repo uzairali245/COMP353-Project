@@ -67,7 +67,7 @@ FOREIGN KEY (aID) REFERENCES Author(aID)
 
 CREATE TABLE Author(
 authorName VARCHAR(255), -- can only be a researcher's name or an org. name
-aID INT,  -- sys_configNOT NULL PRIMARY KEY
+aID INT NOT NULL PRIMARY KEY
 resID INT,
 orgID INT,
 FOREIGN KEY (resID) REFERENCES Researcher(resID),
