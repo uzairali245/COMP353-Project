@@ -1,7 +1,6 @@
 CREATE TABLE Regions(
   RegionName VARCHAR(255), 
   rID INT  NOT NULL PRIMARY KEY,
-  PRIMARY KEY (rID)
 );
 
 CREATE TABLE Countries (
@@ -13,7 +12,6 @@ infected INT,
 totalVaxxed INT,
 govAgency VARCHAR(255),
 rID int,
-PRIMARY KEY (cID),
 FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
@@ -23,7 +21,6 @@ infected INT,
 deaths INT,
 vaccinated INT,
 cID INT,
-PRIMARY KEY (vaccine_type),
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
@@ -39,7 +36,6 @@ Citizenship VARCHAR(255),
 userType VARCHAR(255), --  Privilege name could be either administrator, researcher, or organization delegate
 dob DATE,
 cID INT,
-PRIMARY KEY (UserID),
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
@@ -52,7 +48,6 @@ summary CHAR(100),
 major_topic VARCHAR(255),
 minor_topic VARCHAR(255),
 artID INT NOT NULL PRIMARY KEY,
-PRIMARY KEY (artID),
 FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
@@ -63,7 +58,6 @@ orgType VARCHAR(255), -- can only be company, a research center, or a government
 UserID INT,
 resID INT,
 aID INT,
-PRIMARY KEY (orgID),
 FOREIGN KEY (UserID) REFERENCES User(UserID),
 FOREIGN KEY (resID) REFERENCES Researcher(resID),
 FOREIGN KEY (aID) REFERENCES Author(aID)
@@ -76,7 +70,6 @@ authorName VARCHAR(255), -- can only be a researcher's name or an org. name
 aID INT,  -- sys_configNOT NULL PRIMARY KEY
 resID INT,
 orgID INT,
-PRIMARY KEY (aID),
 FOREIGN KEY (resID) REFERENCES Researcher(resID),
 FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
 );
@@ -86,7 +79,6 @@ CREATE TABLE Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   aID INT,
   UserID INT,
-  PRIMARY KEY(resID),
   FOREIGN KEY (aID) REFERENCES Author(aID),
   FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
