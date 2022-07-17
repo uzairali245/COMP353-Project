@@ -1,19 +1,38 @@
-
 INSERT INTO Regions (RegionName,rID)
 VALUES ('North America',111);
+INSERT INTO Regions (RegionName,rID)
+VALUES ('Asia',222);
 
-INSERT INTO Countries (CountryName,cID, population, deaths, infected, infectednotVAX, totalVaxxed, rID)
-VALUES ('Canada',11,12,3,5,6, 4,111);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected,  totalVaxxed, rID)
+VALUES ('Canada',11,12,3,5, 4,111);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, rID)
+VALUES ('USA',12,13,3,5, 4,111);
+
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, rID)
+VALUES ('India',1,200,3,5, 4,222);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, rID)
+VALUES ('Pakistan',2,200,3,5, 4,222);
 
 INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('moderna',3,4,7,11);
+INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
+VALUES ('pfizer',3,4,7,11);
 
-SELECT *
-FROM Countries a, Vaccine b
-WHERE a.cID=b.cID; 
+INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
+VALUES ('sino',1,4,7,1);
+INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
+VALUES ('idk',1,4,7,2);
 
 
+1
+SELECT RegionName,SUM(population), SUM(totalVaxxed), SUM(deaths)
+FROM Countries JOIN  Regions ON Countries.rID=Regions.rID 
+WHERE Countries.population>1
+Group BY Regions.RegionName
+ORDER BY SUM(population) ASC;
 
+
+2
 
 SELECT RegionName, CountryName, population, vaccinated, deaths
 FROM Countries
