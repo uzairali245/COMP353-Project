@@ -22,7 +22,6 @@ deaths INT,
 vaccinated INT,
 cID INT,
   FOREIGN KEY (cID) REFERENCES Countries(cID)
-
 );
 
 CREATE TABLE User(

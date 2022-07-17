@@ -12,3 +12,11 @@ SELECT *
 FROM Countries a, Vaccine b
 WHERE a.cID=b.cID; 
 
+
+
+
+SELECT RegionName, CountryName, population, vaccinated, deaths
+FROM Countries
+WHERE NOT SURE WHAT TO WRITE HERE <-----------------
+GROUP BY CountryName
+ORDER BY Regions.RegionName AND Countries.CountryName ASC;
