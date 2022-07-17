@@ -39,7 +39,14 @@ cID INT,
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
-
+CREATE TABLE Author(
+authorName VARCHAR(255), -- can only be a researcher's name or an org. name
+aID INT NOT NULL PRIMARY KEY,
+resID INT,
+orgID INT,
+FOREIGN KEY (resID) REFERENCES Researcher(resID),
+FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
+);
 
 CREATE TABLE Article(
 publishDate DATE,
@@ -48,6 +55,7 @@ summary CHAR(100),
 major_topic VARCHAR(255),
 minor_topic VARCHAR(255),
 artID INT NOT NULL PRIMARY KEY,
+aID INT,
 FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
@@ -59,19 +67,8 @@ UserID INT,
 resID INT,
 aID INT,
 FOREIGN KEY (UserID) REFERENCES User(UserID),
-FOREIGN KEY (resID) REFERENCES Researcher(resID),
-FOREIGN KEY (aID) REFERENCES Author(aID)
-);
-
-
-
-CREATE TABLE Author(
-authorName VARCHAR(255), -- can only be a researcher's name or an org. name
-aID INT NOT NULL PRIMARY KEY
-resID INT,
-orgID INT,
-FOREIGN KEY (resID) REFERENCES Researcher(resID),
-FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
+FOREIGN KEY (resID) REFERENCES Researcher(resID)
+-- FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
 
@@ -79,6 +76,9 @@ CREATE TABLE Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   aID INT,
   UserID INT,
-  FOREIGN KEY (aID) REFERENCES Author(aID),
+  -- FOREIGN KEY (aID) REFERENCES Author(aID),
   FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
+
+ALTER TABLE Researcher ADD FOREIGN KEY (aID) REFERENCES Author(aID);
+ALTER TABLE Organisations ADD FOREIGN KEY (aID) REFERENCES Author(aID);
