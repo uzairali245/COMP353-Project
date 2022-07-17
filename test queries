@@ -62,16 +62,14 @@ ORDER BY AVG() AND Regions.regionName ASC
 SELECT publishDate, population, totalVaxxed, infected, deaths
 FROM Regions, Countries
 WHERE Countries = 'Canada'
-GROUP BY 
+GROUP BY Article.publishDate
 ORDER BY publishDate DESC
 
 --6
 
-SELECT 
-FROM 
-WHERE 
-GROUP BY 
-ORDER BY 
+SELECT resID, publishDate, major_topic, minor_topic, summary, aDiscription
+FROM Reasercher, User, Article
+WHERE User.firstName = Joe AND User.LastName = Smith
 
 --7
 
