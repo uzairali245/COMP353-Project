@@ -1,6 +1,6 @@
 CREATE TABLE Regions(
-    RegionName VARCHAR(255), 
-    rID INT  NOT NULL PRIMARY KEY
+  RegionName VARCHAR(255), 
+  rID INT  NOT NULL PRIMARY KEY
 );
 
 CREATE TABLE Countries (
@@ -71,9 +71,9 @@ CREATE TABLE Author(
 authorName VARCHAR(255), -- can only be a researcher's name or an org. name
 aID INT  NOT NULL PRIMARY KEY
 resID INT,
- oID INT,
- FOREIGN KEY (resID) REFERENCES Researcher(resID)
- FOREIGN KEY (oID) REFERENCES Organisations(oID)
+orgID INT,
+FOREIGN KEY (resID) REFERENCES Researcher(resID)
+FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
 
 );
 
@@ -81,8 +81,8 @@ resID INT,
 CREATE TABLE Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   aID INT,
-  FOREIGN KEY (aID) REFERENCES Author(aID)
   UserID INT,
+  FOREIGN KEY (aID) REFERENCES Author(aID),
   FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
