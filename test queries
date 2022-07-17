@@ -20,3 +20,28 @@ FROM Countries
 WHERE NOT SURE WHAT TO WRITE HERE <-----------------
 GROUP BY CountryName
 ORDER BY Regions.RegionName AND Countries.CountryName ASC;
+
+
+--viii
+SELECT userType, firstName, LastName, email, phone,dob,Citizenship
+FROM User
+CASE
+    WHEN userType = 'organization delegate' THEN 
+        (SELECT orgName
+         FROM Organisations)
+END
+ORDER BY userType, Citizenship, dob;
+
+--ix
+SELECT firstName, LastName, email, phone, dob, Citizenship, COUNT(Article) AS totalArticles
+FROM User, Article, Researcher
+WHERE Article.aID = Researcher.aID
+GROUP BY Researcher;
+
+--x
+SELECT firstName, LastName, email, phone, dob, Citizenship
+FROM User
+WHERE User.UserID = Researcher.UserID
+GROUP BY Researcher
+HAVING COUNT(Article) = 0 -- is article and reasercher connected correctly?
+

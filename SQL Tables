@@ -29,13 +29,14 @@ FOREIGN KEY (cID) REFERENCES Countries(cID)
 
 
 CREATE TABLE User(
-UserId INT  NOT NULL PRIMARY KEY,
+UserID INT  NOT NULL PRIMARY KEY,
 firstName VARCHAR(255),
 LastName VARCHAR(255),
 email VARCHAR(255),
 phone INT(15),
 Citizenship VARCHAR(255),
-userType VARCHAR(255)
+userType VARCHAR(255), --  Privilege name could be either administrator, researcher, or organization delegate
+dob DATE,
 cID INT
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
@@ -56,7 +57,7 @@ CREATE TABLE Organisations(
 orgID INT  NOT NULL PRIMARY KEY,
 orgName VARCHAR(255),
 orgType VARCHAR(255) -- can only be company, a research center, or a government agency
-UserId INT,
+UserID INT,
 resID INT,
 aID INT,
 FOREIGN KEY (UserID) REFERENCES User(UserID)
