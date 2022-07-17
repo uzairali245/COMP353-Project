@@ -15,24 +15,15 @@ rID int,
 FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
-
-
-
-
-
-
 CREATE TABLE Vaccine(
 country_name VARCHAR(255),
 vaccine_type VARCHAR(255)  NOT NULL PRIMARY KEY,
 infected INT,
 deaths INT,
 vaccinated INT,
-cID,
+cID INT,
 FOREIGN KEY (cID) REFERENCES Countries(cID)
-
 );
-
-
 
 CREATE TABLE User(
 UserId INT  NOT NULL PRIMARY KEY,
@@ -41,10 +32,9 @@ LastName VARCHAR(255),
 email VARCHAR(255),
 phone float,
 Citizenship VARCHAR(255),
-
+cID INT,
+FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
-
-
 
 CREATE TABLE Article(
 publishDate DATE,
@@ -52,23 +42,34 @@ paragraphs VARCHAR(255),
 summary CHAR(100),
 major_topic VARCHAR(255),
 minor_topic VARCHAR(255),
+aID INT,
+FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
 CREATE TABLE Organisations(
-OID INT  NOT NULL PRIMARY KEY,
+oID INT  NOT NULL PRIMARY KEY,
 name VARCHAR(255),
-Type VARCHAR(255)
+Type VARCHAR(255),
+UserId INT,
+resID INT,
+aID INT,
+FOREIGN KEY (UserID) REFERENCES User(UserID)
+FOREIGN KEY (resID) REFERENCES Researcher(resID)
+FOREIGN KEY (aID) REFERENCES Author(aID)
 );
-
-
 
 CREATE TABLE Author(
  name VARCHAR(255),
- aID INT  NOT NULL PRIMARY KEY
+ aID INT  NOT NULL PRIMARY KEY,
+ resID INT,
+ oID INT,
+ FOREIGN KEY (resID) REFERENCES Researcher(resID)
+ FOREIGN KEY (oID) REFERENCES Organisations(oID)
 );
 
-
 CREATE TABLE Researcher(
-    rID INT  NOT NULL PRIMARY KEY
+    resID INT  NOT NULL PRIMARY KEY,
+    UserID INT,
+    FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
 
