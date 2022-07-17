@@ -43,9 +43,9 @@ CREATE TABLE Author(
 authorName VARCHAR(255), -- can only be a researcher's name or an org. name
 aID INT NOT NULL PRIMARY KEY,
 resID INT,
-orgID INT,
-FOREIGN KEY (resID) REFERENCES Researcher(resID),
-FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
+orgID INT
+-- FOREIGN KEY (resID) REFERENCES Researcher(resID),
+-- FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
 );
 
 CREATE TABLE Article(
@@ -66,8 +66,8 @@ orgType VARCHAR(255), -- can only be company, a research center, or a government
 UserID INT,
 resID INT,
 aID INT,
-FOREIGN KEY (UserID) REFERENCES User(UserID),
-FOREIGN KEY (resID) REFERENCES Researcher(resID)
+FOREIGN KEY (UserID) REFERENCES User(UserID)
+-- FOREIGN KEY (resID) REFERENCES Researcher(resID)
 -- FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
@@ -82,3 +82,6 @@ CREATE TABLE Researcher(
 
 ALTER TABLE Researcher ADD FOREIGN KEY (aID) REFERENCES Author(aID);
 ALTER TABLE Organisations ADD FOREIGN KEY (aID) REFERENCES Author(aID);
+ALTER TABLE Author ADD FOREIGN KEY (resID) REFERENCES Researcher(resID);
+ALTER TABLE Author ADD FOREIGN KEY (orgID) REFERENCES Organisations(orgID);
+ALTER TABLE Organisations ADD FOREIGN KEY (resID) REFERENCES Researcher(resID);
