@@ -34,11 +34,11 @@ ORDER BY SUM(population) ASC;
 
 2
 
-SELECT RegionName, CountryName, population, vaccinated, deaths
-FROM Countries
-WHERE NOT SURE WHAT TO WRITE HERE <-----------------
+SELECT RegionName, CountryName, population, totalVaxxed , deaths
+FROM Countries, Regions
+WHERE Regions.rID = Countries.rID
 GROUP BY CountryName
-ORDER BY Regions.RegionName AND Countries.CountryName ASC;
+ORDER BY Regions.RegionName AND Countries.CountryName ASC; -- Not sure about the order though
 
 
 --viii
