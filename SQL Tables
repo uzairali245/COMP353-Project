@@ -1,6 +1,7 @@
 CREATE TABLE Regions(
   RegionName VARCHAR(255), 
-  rID INT  NOT NULL PRIMARY KEY
+  rID INT  NOT NULL PRIMARY KEY,
+  PRIMARY KEY (rID)
 );
 
 CREATE TABLE Countries (
@@ -12,6 +13,7 @@ infected INT,
 totalVaxxed INT,
 govAgency VARCHAR(255),
 rID int,
+PRIMARY KEY (cID),
 FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
@@ -21,8 +23,8 @@ infected INT,
 deaths INT,
 vaccinated INT,
 cID INT,
+PRIMARY KEY (vaccine_type),
 FOREIGN KEY (cID) REFERENCES Countries(cID)
-
 );
 
 
@@ -36,7 +38,8 @@ phone INT(15),
 Citizenship VARCHAR(255),
 userType VARCHAR(255), --  Privilege name could be either administrator, researcher, or organization delegate
 dob DATE,
-cID INT
+cID INT,
+PRIMARY KEY (UserID),
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
@@ -48,33 +51,34 @@ paragraphs VARCHAR(255),
 summary CHAR(100),
 major_topic VARCHAR(255),
 minor_topic VARCHAR(255),
-aID INT,
+artID INT NOT NULL PRIMARY KEY,
+PRIMARY KEY (artID),
 FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
 CREATE TABLE Organisations(
 orgID INT  NOT NULL PRIMARY KEY,
 orgName VARCHAR(255),
-orgType VARCHAR(255) -- can only be company, a research center, or a government agency
+orgType VARCHAR(255), -- can only be company, a research center, or a government agency
 UserID INT,
 resID INT,
 aID INT,
-FOREIGN KEY (UserID) REFERENCES User(UserID)
-FOREIGN KEY (resID) REFERENCES Researcher(resID)
+PRIMARY KEY (orgID),
+FOREIGN KEY (UserID) REFERENCES User(UserID),
+FOREIGN KEY (resID) REFERENCES Researcher(resID),
 FOREIGN KEY (aID) REFERENCES Author(aID)
-
 );
 
 
 
 CREATE TABLE Author(
 authorName VARCHAR(255), -- can only be a researcher's name or an org. name
-aID INT  NOT NULL PRIMARY KEY
+aID INT,  -- sys_configNOT NULL PRIMARY KEY
 resID INT,
 orgID INT,
-FOREIGN KEY (resID) REFERENCES Researcher(resID)
+PRIMARY KEY (aID),
+FOREIGN KEY (resID) REFERENCES Researcher(resID),
 FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
-
 );
 
 
@@ -82,7 +86,7 @@ CREATE TABLE Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   aID INT,
   UserID INT,
+  PRIMARY KEY(resID),
   FOREIGN KEY (aID) REFERENCES Author(aID),
   FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
-
