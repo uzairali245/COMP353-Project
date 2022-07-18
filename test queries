@@ -24,6 +24,60 @@ INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('idk',1,4,7,2);
 
 
+
+
+
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('002','Maroua','Krim','mk@gmail.com','1112223332','Canadian','organization delegate','1999-09-01',11);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('003','Joe','Scan','js@gmail.com','1112223333','Canadian','reasercher','1999-09-02',11);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('001','Laura','Maine','lm@gmail.com','1112223331','American','organization delegate','1999-09-03',12);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('004','Cynthia','Mona','cm@gmail.com','1112223334','Syrian','reasercher','1999-09-04',20);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('005','Noah','Kim','nk@gmail.com','1112223335','English','reasercher','1999-09-05',21);
+
+
+INSERT INTO Organisations(orgID, orgName, orgType, UserID, resID, aID)
+VALUES('0001', 'RandomOrgName', 'company', '001','null' , 'null');
+INSERT INTO Organisations(orgID, orgName, orgType, UserID, resID, aID)
+VALUES('0002', 'WholesomeOrg', 'research center', '002','null' , 'null');
+
+
+
+
+INSERT INTO Author(authorName,aID,resID,orgID)
+VALUES('Joe Scan','666','7777',null);
+INSERT INTO Author(authorName,aID,resID,orgID)
+VALUES('Cynthia Mona', '888' , '8888', null);
+INSERT INTO Author(authorName,aID,resID,orgID)
+VALUES('Noah Kim', '999' , '9999', null);
+
+
+INSERT INTO Researcher(resID,aID,UserID)
+VALUES('1234','888',004);
+INSERT INTO Researcher(resID,aID,UserID)
+VALUES('7777','666',003);
+INSERT INTO Researcher(resID,aID,UserID)
+VALUES(9999,999,005);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+VALUES('2022-07-17','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'Covid major', 'vaccine minor', 1,'666',003,7777);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+VALUES('2022-07-16','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 2,'666',003,7777);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 3,'888',004,1244);
+
+
+
+
+
 --1
 
 SELECT RegionName,SUM(population), SUM(totalVaxxed), SUM(deaths)
@@ -64,7 +118,7 @@ FROM Regions, Countries
 WHERE Countries = 'Canada'
 GROUP BY 
 ORDER BY publishDate DESC
-
+/*
 --6
 
 SELECT 
@@ -79,30 +133,37 @@ SELECT
 FROM 
 GROUP BY 
 ORDER BY 
-
+*/
 --8
 
 SELECT userType, firstName, LastName, email, phone, dob, Citizenship,
 CASE
     WHEN userType = 'organization delegate' THEN 
         (SELECT orgName
-         FROM Organisations)
+         FROM Organisations
+         WHERE Organisations.UserID = Users.UserID)
 END
-FROM User
+FROM Users
 ORDER BY userType, Citizenship, dob;
 
---9
+--9 PROBLEM: ITS CONNECTED THROUGH USER ID ANO NOT ARTICLE AND REASERCHER AUTHOR IDs
 
-SELECT firstName, LastName, email, phone, dob, Citizenship, COUNT(Article) AS totalArticles
-FROM User, Article, Researcher
-WHERE Article.aID = Researcher.aID
-GROUP BY Researcher;
+SELECT firstName, LastName, email, phone, dob, Citizenship, (   SELECT COUNT(*)
+                                                                FROM Article
+                                                                WHERE Article.UserID = Users.UserID) AS totalArticles
+FROM Users, Article, Researcher
+WHERE userType = 'reasercher'-- AND Article.aID = Researcher.aID
+GROUP BY Users.UserID;
 
 --10
-
+/*
 SELECT firstName, LastName, email, phone, dob, Citizenship
-FROM User
-WHERE User.UserID = Researcher.UserID
+FROM Users
+WHERE Users.UserID = Researcher.UserID
 GROUP BY Researcher
 HAVING COUNT(Article) = 0 -- is article and reasercher connected correctly?
-
+*/
+SELECT firstName, LastName, email, phone, dob, Citizenship
+FROM Users,Article,Researcher
+WHERE Researcher.aID is not null AND Article.aID is null;
+-- for all reaserchers, if a reasercher's resID does not exist in Article.resID, then he wrote 0 articles
