@@ -105,7 +105,7 @@ ORDER BY Vaccine.deaths ASC;
 
 --4
 
-SELECT regionName, population, resID, articles
+SELECT regionName, population, resID, artID
 FROM Regions, Researchers, Articles
 WHERE 
 GROUP BY Researcher.resID AND Region.regionName
@@ -116,8 +116,7 @@ ORDER BY AVG() AND Regions.regionName ASC
 SELECT publishDate, population, totalVaxxed, infected, deaths
 FROM Regions, Countries
 WHERE Countries = 'Canada'
-GROUP BY Article.publishDate
-ORDER BY publishDate DESC
+ORDER BY Article.publishDate DESC
 /*
 --6
 
