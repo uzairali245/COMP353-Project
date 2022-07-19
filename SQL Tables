@@ -12,6 +12,7 @@ infected INT,
 totalVaxxed INT,
 govAgency VARCHAR(255),
 rID int,
+currentdate DATE,
 FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
