@@ -48,31 +48,36 @@ VALUES(0002, 'WholesomeOrg', 'research center', 002,null , null);
 
 
 INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Joe Scan','666','7777',null);
+VALUES('Joe Scan', 666 ,7777,null);
 INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Cynthia Mona', '888' , '8888', null);
+VALUES('Cynthia Mona', 888 , 1234, null);
 INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Noah Kim', '999' , '9999', null);
+VALUES('Noah Kim', 999 , 9999, null);
 
 
+
 INSERT INTO Researcher(resID,aID,UserID)
-VALUES('1234','888',004);
+VALUES(1234,null,004);
 INSERT INTO Researcher(resID,aID,UserID)
-VALUES('7777','666',003);
+VALUES(7777,null,003);
 INSERT INTO Researcher(resID,aID,UserID)
-VALUES(9999,999,005);
+VALUES(9999,null,005);
+
+
+
+
 
 INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
 VALUES('2022-07-17','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'Covid major', 'vaccine minor', 1,'666',003,7777);
+','this is a summary', 'Covid major', 'vaccine minor', 1,666,003,7777);
 
 INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
 VALUES('2022-07-16','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'something major', 'something minor', 2,'666',003,7777);
+','this is a summary', 'something major', 'something minor', 2,666,003,7777);
 
 INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
 VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'something major', 'something minor', 3,'888',004,1244);
+','this is a summary', 'something major', 'something minor', 3,888,004,1234);
 
 
 
