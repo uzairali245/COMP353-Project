@@ -3,10 +3,12 @@ VALUES ('North America',111);
 INSERT INTO Regions (RegionName,rID)
 VALUES ('Asia',222);
 
-INSERT INTO Countries (CountryName,cID, population, deaths, infected,  totalVaxxed, rID)
-VALUES ('Canada',11,12,3,5, 4,111);
-INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, rID)
-VALUES ('USA',12,13,3,5, 4,111);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected,  totalVaxxed,currentdate, rID)
+VALUES ('Canada',11,12,3,5, 4,'2000-07-24',111);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed,currentdate, rID)
+VALUES ('Canada',12,44,3,5, 4,'2022-01-01',111);
+INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, currentdate,rID)
+VALUES ('USA',55,13,3,5, 4,'2022-05-01',111);
 
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, rID)
 VALUES ('India',1,200,3,5, 4,222);
@@ -113,10 +115,11 @@ ORDER BY AVG() AND Regions.regionName ASC
 
 --5
 
-SELECT publishDate, population, totalVaxxed, infected, deaths
-FROM Regions, Countries
-WHERE Countries = 'Canada'
-ORDER BY Article.publishDate DESC
+
+SELECT CountryName,currentdate,population, totalVaxxed, infected, deaths
+FROM Countries
+WHERE CountryName = 'Canada'
+ORDER BY currentdate DESC;
 /*
 --6
 
