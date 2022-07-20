@@ -48,7 +48,7 @@ VALUES(0002, 'WholesomeOrg', 'research center', 002,null , null);
 
 
 INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Joe Scan', 666 ,7777,null);
+VALUES('Joe Smith', 666 ,7777,null);
 INSERT INTO Author(authorName,aID,resID,orgID)
 VALUES('Cynthia Mona', 888 , 1234, null);
 INSERT INTO Author(authorName,aID,resID,orgID)
@@ -123,13 +123,15 @@ FROM Countries
 WHERE CountryName = 'Canada'
 ORDER BY currentdate DESC;
 
-/*
 --6
 
-SELECT resID, publishDate, major_topic, minor_topic, summary, aDiscription
-FROM Reasercher, User, Article
-WHERE User.firstName = Joe AND User.LastName = Smith
+SELECT publishDate, major_topic, minor_topic, summary
+FROM Article, Author
+WHERE Author.authorName = 'Joe Smith' AND Author.aID = Article.aID
+GROUP BY Article.artID
+ORDER BY publishDate ASC;
 
+/*
 --7
 
 SELECT MAX(publishDate), major_topic, minor_topic, summary, aDiscription

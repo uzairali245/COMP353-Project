@@ -74,7 +74,6 @@ CREATE TABLE Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   aID INT,
   UserID INT,
-  -- FOREIGN KEY (aID) REFERENCES Author(aID),
   FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
