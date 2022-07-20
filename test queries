@@ -110,11 +110,20 @@ ORDER BY Vaccine.deaths ASC;
 
 --4
 
-SELECT COUNT(resID) as 'numRes', COUNT(artID) as 'numArticle', regionName, SUM(population)
-FROM Regions, Researchers, Articles, Countries
-WHERE Regions.resID = Countries.resID AND
-GROUP BY Researcher.resID AND Region.regionName
-ORDER BY AVG(COUNT(resID)) AND Regions.regionName ASC
+SELECT regions.regionname, SUM(Countries.population)
+FROM Regions, Countries
+WHERE Regions.rID = Countries.rID
+GROUP BY regions.regionname;
+
+SELECT regions.regionname, COUNT(Researcher.resID)
+FROM Regions ,Countries, Researcher, users
+WHERE  Researcher.userID = users.userID AND Users.cid = countries.cid AND regions.rid = Countries.rid
+GROUP BY regions.regionname;
+
+SELECT regions.regionname, COUNT(Article.artID)
+FROM Regions ,Countries, Researcher, users, Article
+WHERE  Researcher.userID = users.userID AND Users.cid = countries.cid AND regions.rid = Countries.rid AND Article.userID = researcher.userID
+GROUP BY regions.regionname;
 
 --5
 
