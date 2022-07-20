@@ -147,7 +147,7 @@ CASE
          WHERE Organisations.UserID = Users.UserID)
 END
 FROM Users
-ORDER BY userType, Citizenship, dob;
+ORDER BY userType asc, Citizenship asc, dob asc;
 
 --9 PROBLEM: ITS CONNECTED THROUGH USER ID ANO NOT ARTICLE AND REASERCHER AUTHOR IDs
 
