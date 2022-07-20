@@ -132,11 +132,10 @@ WHERE User.firstName = Joe AND User.LastName = Smith
 
 --7
 
-SELECT 
-FROM 
-GROUP BY 
-ORDER BY 
-*/
+SELECT MAX(publishDate), major_topic, minor_topic, summary, aDiscription
+FROM Article, Users
+WHERE Article.userID = Users.UserID AND Users.firstName = 'Joe' AND Users.lastName = 'Smith'
+
 --8
 
 SELECT userType, firstName, LastName, email, phone, dob, Citizenship,
@@ -147,7 +146,7 @@ CASE
          WHERE Organisations.UserID = Users.UserID)
 END
 FROM Users
-ORDER BY userType, Citizenship, dob;
+ORDER BY userType asc, Citizenship asc, dob asc;
 
 --9 PROBLEM: ITS CONNECTED THROUGH USER ID ANO NOT ARTICLE AND REASERCHER AUTHOR IDs
 
@@ -159,14 +158,7 @@ WHERE userType = 'reasercher'-- AND Article.aID = Researcher.aID
 GROUP BY Users.UserID;
 
 --10
-/*
 SELECT firstName, LastName, email, phone, dob, Citizenship
-FROM Users
-WHERE Users.UserID = Researcher.UserID
-GROUP BY Researcher
-HAVING COUNT(Article) = 0 -- is article and reasercher connected correctly?
-*/
-SELECT firstName, LastName, email, phone, dob, Citizenship
-FROM Users,Article,Researcher
-WHERE Researcher.aID is not null AND Article.aID is null;
--- for all reaserchers, if a reasercher's resID does not exist in Article.resID, then he wrote 0 articles
+FROM Users ,Researcher, Article
+WHERE users.userID = Researcher.userID AND Researcher.UserID != article.userID
+GROUP BY users.firstname and users.lastname
