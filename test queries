@@ -132,11 +132,10 @@ WHERE User.firstName = Joe AND User.LastName = Smith
 
 --7
 
-SELECT 
-FROM 
-GROUP BY 
-ORDER BY 
-*/
+SELECT MAX(publishDate), major_topic, minor_topic, summary, aDiscription
+FROM Article, Users
+WHERE Article.userID = Users.UserID AND Users.firstName = 'Joe' AND Users.lastName = 'Smith'
+
 --8
 
 SELECT userType, firstName, LastName, email, phone, dob, Citizenship,
