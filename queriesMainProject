@@ -1,0 +1,138 @@
+---------------Query 1
+--Create
+INSERT INTO kuc353_1.User
+            (userID, firstName, lastName, email, phone, citizenship, userType, dob, cID)
+            VALUES('002','Maroua','Krim','mk@gmail.com','1112223332','Canadian','Administrator','1999-09-01',11);
+
+--Update/Edit
+UPDATE User
+SET telNum = '15143334545'
+WHERE userID = '002';
+
+--Display all Administrators
+SELECT * 
+FROM User
+Where userType = 'Administrator'; 
+
+--Display
+SELECT * 
+FROM User
+Where userType = 'Administrator' AND userID = '002'; 
+
+--Delete
+DELETE FROM User
+WHERE userID = '002';
+
+
+
+---------------Query 2
+--Create
+INSERT INTO kuc353_1.User
+            (userID, firstName, lastName, email, phone, citizenship, userType, dob, cID)
+            VALUES('003','Mara','Kline','mkline@gmail.com','1514223332','Canadian','Researcher','1999-09-01',11);
+INSERT INTO kuc353_1.Researcher
+            (resID, aID, userID)
+            VALUES(1234,888,003);
+
+
+--Update/Edit
+UPDATE Researcher
+SET resID = '4141'
+WHERE userID = '003';
+
+--Display all Researchers
+SELECT * 
+FROM User
+Where userType = 'Researcher'; 
+
+--Display
+SELECT * 
+FROM Researcher
+Where resID = '4141'; 
+
+--Delete
+DELETE FROM Researcher
+WHERE resID = '4141';
+
+
+
+
+---------------Query 3
+--Create
+INSERT INTO kuc353_1.Organisations
+            (orgID, orgName, orgType, UserID, resID, aID)
+            VALUES(0001, 'RandomOrgName', 'company', null, null , null);
+
+--Update/Edit
+UPDATE Organisations
+SET orgName = 'cRelief'
+WHERE orgID = '0001';
+
+--Display all Researchers
+SELECT * 
+FROM Organisations;
+
+--Display
+SELECT * 
+FROM Organisations
+Where orgID = '0001';
+
+--Delete
+DELETE FROM Organisations
+WHERE orgID = '0001';
+
+
+---------------Query 4
+--Create
+INSERT INTO kuc353_1.User
+            INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+            VALUES('005','Joe','Scan','js@gmail.com','1112223333','Canadian','Employee','1999-09-02',11);
+
+INSERT INTO kuc353_1.Organisations
+            (orgID, orgName, orgType, UserID, resID, aID)
+            VALUES(0001, 'RandomOrgName', 'company', 005, null , null);
+
+--Update/Edit
+UPDATE User
+SET phone = '15140078909'
+WHERE orgID = '0001' and UserID = '005';
+
+--Display all Employees
+SELECT * 
+FROM User
+Where userType = 'Employee';
+
+--Display
+SELECT * 
+FROM User, Organisations
+WHERE orgID = '0001' AND UserID = '005';
+
+--Delete
+DELETE FROM User
+WHERE UserID = '005' AND userType = 'Employee';
+
+
+---------------Query 5
+--Create
+INSERT INTO kuc353_1.Country
+            INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, currentdate, rID)
+            VALUES (‘Japan’,5,10003,3,5, 4,'2022-05-01',444);
+
+
+--Update/Edit
+UPDATE Country
+SET cID = '13'
+WHERE CountryName = 'Japan';
+
+--Display all Countries
+SELECT * 
+FROM Country;
+
+--Display
+SELECT * 
+FROM Country
+Where cID = '13';
+
+--Delete
+DELETE FROM Country
+WHERE cID = '13';
