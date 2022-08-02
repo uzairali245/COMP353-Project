@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:8889
--- Généré le : mar. 02 août 2022 à 23:06
--- Version du serveur : 5.7.34
--- Version de PHP : 7.4.21
+-- Host: localhost:8889
+-- Generation Time: Aug 02, 2022 at 11:10 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `covidsys`
+-- Database: `covidsys`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `articles`
+-- Table structure for table `articles`
 --
 
 CREATE TABLE `articles` (
@@ -43,7 +43,7 @@ CREATE TABLE `articles` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `authors`
+-- Table structure for table `authors`
 --
 
 CREATE TABLE `authors` (
@@ -57,7 +57,7 @@ CREATE TABLE `authors` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `countries`
+-- Table structure for table `countries`
 --
 
 CREATE TABLE `countries` (
@@ -73,7 +73,7 @@ CREATE TABLE `countries` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `countries`
+-- Dumping data for table `countries`
 --
 
 INSERT INTO `countries` (`cID`, `country_name`, `populations`, `deaths`, `infected`, `vaccinated`, `gov_agency`, `region_name`, `report_date`) VALUES
@@ -84,7 +84,7 @@ INSERT INTO `countries` (`cID`, `country_name`, `populations`, `deaths`, `infect
 -- --------------------------------------------------------
 
 --
--- Structure de la table `emails`
+-- Table structure for table `emails`
 --
 
 CREATE TABLE `emails` (
@@ -98,7 +98,7 @@ CREATE TABLE `emails` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `organisations`
+-- Table structure for table `organisations`
 --
 
 CREATE TABLE `organisations` (
@@ -113,7 +113,7 @@ CREATE TABLE `organisations` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `researchers`
+-- Table structure for table `researchers`
 --
 
 CREATE TABLE `researchers` (
@@ -126,7 +126,7 @@ CREATE TABLE `researchers` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -146,7 +146,7 @@ CREATE TABLE `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userID`, `username`, `password`, `first_name`, `last_name`, `email`, `phone`, `citizenship`, `user_type`, `dob`, `suspension_date`, `cID`, `status`) VALUES
@@ -156,17 +156,17 @@ INSERT INTO `users` (`userID`, `username`, `password`, `first_name`, `last_name`
 (4, 'sajistero3', '3333', 'sajeed', 'islam', 'saji@gmail.com', '438123412', NULL, 4, '1998-12-01', NULL, NULL, 1);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `articles`
+-- Indexes for table `articles`
 --
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`artID`);
 
 --
--- Index pour la table `authors`
+-- Indexes for table `authors`
 --
 ALTER TABLE `authors`
   ADD PRIMARY KEY (`aID`),
@@ -175,13 +175,13 @@ ALTER TABLE `authors`
   ADD KEY `userID` (`userID`);
 
 --
--- Index pour la table `countries`
+-- Indexes for table `countries`
 --
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`cID`);
 
 --
--- Index pour la table `organisations`
+-- Indexes for table `organisations`
 --
 ALTER TABLE `organisations`
   ADD PRIMARY KEY (`orgID`),
@@ -190,7 +190,7 @@ ALTER TABLE `organisations`
   ADD KEY `resID` (`resID`);
 
 --
--- Index pour la table `researchers`
+-- Indexes for table `researchers`
 --
 ALTER TABLE `researchers`
   ADD PRIMARY KEY (`resID`),
@@ -199,7 +199,7 @@ ALTER TABLE `researchers`
   ADD KEY `aID` (`aID`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`userID`),
@@ -208,35 +208,35 @@ ALTER TABLE `users`
   ADD KEY `cID` (`cID`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `articles`
+-- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
   MODIFY `artID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `countries`
+-- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
   MODIFY `cID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `organisations`
+-- AUTO_INCREMENT for table `organisations`
 --
 ALTER TABLE `organisations`
   MODIFY `orgID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `researchers`
+-- AUTO_INCREMENT for table `researchers`
 --
 ALTER TABLE `researchers`
   MODIFY `resID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
