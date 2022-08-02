@@ -137,8 +137,38 @@ Where cID = '13';
 DELETE FROM Country
 WHERE cID = '13';
 
+-----------------------Query 8
+-- reasearcher article
+BEGIN TRANSACTION;
+INSERT INTO deletedArticle (publishDate,major_topic,minor_topic,artID,aID,UserID)
+SELECT publishDate,major_topic,minor_topic,artID,aID,UserID
+FROM Article
+WHERE artID = 1;
 
+UPDATE deletedArticle
+SET removalDate = '2022-07-30'
+WHERE artID = 1;
 
+DELETE FROM Article
+WHERE artID=1;
+
+COMMIT;
+
+-- organization article
+BEGIN TRANSACTION;
+INSERT INTO deletedArticle (publishDate,major_topic,minor_topic,artID,aID,UserID,resID)
+SELECT publishDate,major_topic,minor_topic,artID,aID,UserID,resID
+FROM Article
+WHERE artID = 8;
+
+UPDATE deletedArticle
+SET removalDate = '2022-07-31'
+WHERE artID = 8;
+
+DELETE FROM Article
+WHERE artID=8;
+
+COMMIT;
 
 
 -- 11
@@ -180,6 +210,19 @@ major_topic, minor_topic, publishDate, Users.citizenship
 FROM Users,Author,Article,Organisations,Researchers
 where Author.aID = Article.aID and Author.resID = Researchers.resID
 -- rest of query
+
+
+---------------- 12
+SELECT Users.firstName, Users.LastName, deletedArticle.major_topic, deletedArticle.minor_topic, deletedArticle.publishDate, Users.Citizenship
+FROM Author, deletedArticle, Users
+WHERE Author.aID = deletedArticle.aID AND Users.UserID = Author.UserID
+ORDER BY Users.Citizenship ASC, removalDate ASC;
+
+SELECT Organisations.orgName, deletedArticle.major_topic, deletedArticle.minor_topic, deletedArticle.publishDate, Countries.CountryName
+FROM Author, deletedArticle, Organisations, Countries
+WHERE Author.aID = deletedArticle.aID AND Organisations.orgID = Author.orgID AND Author.cID = Countries.cID
+ORDER BY CountryName ASC, removalDate ASC;
+
 
 --14
 SELECT  publishDate, major_topic, minor_topic,  summary, paragraphs

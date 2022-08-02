@@ -43,15 +43,23 @@ orgID INT  NOT NULL PRIMARY KEY,
 orgName VARCHAR(255),
 orgType VARCHAR(255) check (orgType in ('company', 'research center', 'government agency')), -- can only be company, a research center, or a government agency
 UserID INT,
-FOREIGN KEY (UserID) REFERENCES Users(UserID)
+resID INT,
+aID INT,
+cID INT,
+FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (aID) REFERENCES Author(aID),
+FOREIGN KEY (resID) REFERENCES Researcher(resID),
+FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
 CREATE TABLE IF NOT EXISTS Researcher(
   resID INT  NOT NULL PRIMARY KEY,
   orgID INT,
   UserID INT,
+  aID INT,
   FOREIGN KEY (UserID) REFERENCES Users(UserID),
-  FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
+  FOREIGN KEY (orgID) REFERENCES Organisations(orgID),
+  FOREIGN KEY (aID) REFERENCES Author(aID)
 );
 
 
@@ -59,7 +67,11 @@ CREATE TABLE IF NOT EXISTS Researcher(
 CREATE TABLE IF NOT EXISTS Author(
 aID INT NOT NULL PRIMARY KEY,
 resID INT,
-orgID INT
+orgID INT,
+UserID INT,
+FOREIGN KEY (resID) REFERENCES Researcher(resID),
+FOREIGN KEY (orgID) REFERENCES Organisations(orgID),
+FOREIGN KEY (UserID) REFERENCES Users(UserID)
 );
 
 CREATE TABLE IF NOT EXISTS Article(
@@ -71,7 +83,11 @@ minor_topic VARCHAR(255),
 aDiscription CHAR(100),
 artID INT NOT NULL PRIMARY KEY,
 aID INT,
-FOREIGN KEY (aID) REFERENCES Author(aID)
+UserID INT,
+resID INT,
+FOREIGN KEY (aID) REFERENCES Author(aID),
+FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (resID) REFERENCES Researcher(resID)
 );
 
 CREATE TABLE IF NOT EXISTS UserAuthorNotification(
@@ -79,4 +95,21 @@ UserID INT,
 aID INT,
 FOREIGN KEY (UserID) REFERENCES Users(UserID),
 FOREIGN KEY (aID) REFERENCES Author(aID)
+);
+
+CREATE TABLE deletedArticle(
+removalDate DATE,
+publishDate DATE,
+paragraphs VARCHAR(255),
+summary CHAR(100),
+major_topic VARCHAR(255),
+minor_topic VARCHAR(255),
+aDiscription CHAR(100),
+artID INT NOT NULL PRIMARY KEY,
+aID INT,
+UserID INT,
+resID INT,
+FOREIGN KEY (aID) REFERENCES Author(aID),
+FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (resID) REFERENCES Researcher(resID)
 );
