@@ -186,3 +186,12 @@ SELECT  publishDate, major_topic, minor_topic,  summary, paragraphs
 FROM Author, Article
 WHERE Author.aID=Article.aID
 ORDER BY publishDate ASC;
+
+-- 15 (incomplete) 
+SELECT count(Article.artID),Users.firstName,Users.LastName
+FROM Users, Author,Article
+WHERE Article.aID=Author.aID
+GROUP BY Author.aID
+ORDER BY count(Article.artID) DESC;
+
+
