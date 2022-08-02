@@ -136,3 +136,48 @@ Where cID = '13';
 --Delete
 DELETE FROM Country
 WHERE cID = '13';
+
+
+
+
+
+-- 11
+select 
+case when
+author.resID != null
+then
+User.firstname else null end as 'first name',
+
+case when
+author.resID != null
+then
+User.lastname else null end as 'last name',
+
+case when
+author.orgID != null and author.resID = null
+then
+Orgranizations.organizationName else null end as 'organization Name',
+major_topic, minor_topic, publishDate, Users.citizenship
+FROM Users,Author,Article,Organisations
+where Author.aID = Article.aID and Author.orgID = Organisation.orgID
+union
+select 
+case when
+author.resID != null
+then
+User.firstname else null end as 'first name',
+
+case when
+author.resID != null
+then
+User.lastname else null end as 'last name',
+
+case when
+author.orgID != null and author.resID = null
+then
+Orgranizations.organizationName else null end as 'organization Name',
+major_topic, minor_topic, publishDate, Users.citizenship
+FROM Users,Author,Article,Organisations,Researchers
+where Author.aID = Article.aID and Author.resID = Researchers.resID
+-- rest of query
+
