@@ -12,19 +12,19 @@ INSERT INTO Regions (RegionName,rID)
 VALUES ('Western Pacific',6);
 
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('Canada',1,124901258,10000,1000000, 123431,'Canada agency',1,null);
+VALUES ('Canada',1,1249058,10000,1000000, 123431,'Canada agency',1,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('Brazil',2,1249012258,10000,1000000, 123431,'Brazil agency',1,null);
+VALUES ('Brazil',2,1212258,10000,1000000, 123431,'Brazil agency',1,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('USA',3,1242901258,10000,1000000, 123431,'USA agency',1,null);
+VALUES ('USA',3,1242258,10000,1000000, 123431,'USA agency',1,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('India',4,4223232442,10000,1000000, 123431,'India agency',5,null);
+VALUES ('India',4,4223232,10000,1000000, 123431,'India agency',5,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('Pakistan',5,4321564745,10000,1000000,1234314,'Pakistan agency',5,null);
+VALUES ('Pakistan',5,43498745,10000,1000000,1234314,'Pakistan agency',5,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('Egypt',6,4321564745,10000,1000000,1234314,'Pakistan agency',3,null);
+VALUES ('Egypt',6,4321545,10000,1000000,1234314,'Pakistan agency',3,null);
 INSERT INTO Countries (CountryName,cID, population, deaths, infected, totalVaxxed, govAgency, rID, currentdate)
-VALUES ('Algeria',7,4321564745,10000,1000000,1234314,'Pakistan agency',3,null);
+VALUES ('Algeria',7,4321745,10000,1000000,1234314,'Pakistan agency',3,null);
 
 INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('Moderna',4353423,2134,2343252,1);
@@ -53,47 +53,48 @@ VALUES ('Johnson & Johnson',4353423,2342,124213,5);
 INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('Johnson & Johnson',325234,234,124312,3);
 
+
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('2','Maroua','Krim','mk@gmail.com','9834523432','Canadian','reasercher','1999-09-01',1);
+VALUES('2','Maroua','Krim','mk@gmail.com','9833432','Canadian','researcher','1999-09-01',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('3','Joe','Scan','js@gmail.com','1112223333','Canadian','reasercher','1999-09-02',1);
+VALUES('3','Joe','Scan','js@gmail.com','1112333','Canadian','researcher','1999-09-02',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('1','Laura','Maine','lm@gmail.com','4325443574','Brazilian','reasercher','1999-09-03',2);
+VALUES('1','Laura','Maine','lm@gmail.com','4323574','Brazilian','researcher','1999-09-03',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('4','Cynthia','Mona','cm@gmail.com','43523523','American','administrator','1999-09-04',3);
+VALUES('4','Cynthia','Mona','cm@gmail.com','433523','American','administrator','1999-09-04',3);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('5','Noah','Kim','nqwrqw@gmail.com','23543534','Brazilian','reasercher','1999-09-05',2);
+VALUES('5','Noah','Kim','nqwrqw@gmail.com','233534','Brazilian','researcher','1999-09-05',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('6','Martin','Kim','nwqeqw@gmail.com','643236234','Pakistani','administrator','1999-09-05',5);
+VALUES('6','Martin','Kim','nwqeqw@gmail.com','6432234','Pakistani','administrator','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('7','Noah','Scan','nertew@gmail.com','12432564','Pakistani','administrator','1999-09-05',5);
+VALUES('7','Noah','Scan','nertew@gmail.com','1243564','Pakistani','administrator','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('8','Maine','Kim','nasf@gmail.com','4564574534','Egyptian','administrator','1999-09-05',6);
+VALUES('8','Maine','Kim','nasf@gmail.com','4564534','Egyptian','administrator','1999-09-05',6);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('9','Martin','Scan','ms@gmail.com','23523562','Algerian','reasercher','1999-09-05',7);
+VALUES('9','Martin','Scan','ms@gmail.com','235562','Algerian','researcher','1999-09-05',7);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('10','Noah','Maine','nm@gmail.com','23543226','Indian','administrator','1999-09-05',4);
+VALUES('10','Noah','Maine','nm@gmail.com','235226','Indian','administrator','1999-09-05',4);
 
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
 VALUES('12', null, null,'uyki@gmail.com','2352356','Canadian','organization delegate','1999-09-01',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('13',null, null,'uiolli@gmail.com','1234325346','Canadian','organization delegate','1999-09-02',1);
+VALUES('13',null, null,'uiolli@gmail.com','1235346','Canadian','organization delegate','1999-09-02',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('11',null, null,'uio@gmail.com','64376756','Brazilian','organization delegate','1999-09-03',2);
+VALUES('11',null, null,'uio@gmail.com','643756','Brazilian','organization delegate','1999-09-03',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('14',null, null,'uiou@gmail.com','9879078767','American','organization delegate','1999-09-04',3);
+VALUES('14',null, null,'uiou@gmail.com','9879767','American','organization delegate','1999-09-04',3);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('15',null, null,'uiol@gmail.com','54635435','Brazilian','organization delegate','1999-09-05',2);
+VALUES('15',null, null,'uiol@gmail.com','546335','Brazilian','organization delegate','1999-09-05',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('16',null, null,'uil@gmail.com','2354364537','Pakistani','organization delegate','1999-09-05',5);
+VALUES('16',null, null,'uil@gmail.com','2354537','Pakistani','organization delegate','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('17',null, null,'uio@gmail.com','34654745','Pakistani','organization delegate','1999-09-05',5);
+VALUES('17',null, null,'uio@gmail.com','346545','Pakistani','organization delegate','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('18',null, null,'uiol@gmail.com','235463463','Egyptian','organization delegate','1999-09-05',6);
+VALUES('18',null, null,'uiol@gmail.com','2354463','Egyptian','organization delegate','1999-09-05',6);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('19',null, null,'gjghg@gmail.com','2353425346','Algerian','organization delegate','1999-09-05',7);
+VALUES('19',null, null,'gjghg@gmail.com','235346','Algerian','organization delegate','1999-09-05',7);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('20',null, null,'rtgdk@gmail.com','235436674','Indian','organization delegate','1999-09-05',4);
+VALUES('20',null, null,'rtgdk@gmail.com','235674','Indian','organization delegate','1999-09-05',4);
 
 INSERT INTO Organisations(orgID, orgName, orgType, UserID)
 VALUES(1, 'Canada agency', 'company', 12);
@@ -155,19 +156,19 @@ VALUES(1,3);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(1,4);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(1,12);
+VALUES(1,10);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(1,20);
+VALUES(1,5);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(5,11);
+VALUES(5,9);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(5,14);
+VALUES(5,1);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(5,4);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(5,8);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(5,4);
+VALUES(5,3);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(3,2);
 INSERT INTO UserAuthorNotification(UserID,aID)
@@ -181,15 +182,15 @@ VALUES(3,10);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(8,2);
 INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(8,11);
-INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(8,12);
-INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(8,17);
-INSERT INTO UserAuthorNotification(UserID,aID)
-VALUES(8,15);
+VALUES(8,1);
 INSERT INTO UserAuthorNotification(UserID,aID)
 VALUES(8,10);
+INSERT INTO UserAuthorNotification(UserID,aID)
+VALUES(8,7);
+INSERT INTO UserAuthorNotification(UserID,aID)
+VALUES(8,5);
+INSERT INTO UserAuthorNotification(UserID,aID)
+VALUES(8,6);
 
 INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
 VALUES('2022-07-17','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
