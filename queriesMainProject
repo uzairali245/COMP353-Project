@@ -181,3 +181,8 @@ FROM Users,Author,Article,Organisations,Researchers
 where Author.aID = Article.aID and Author.resID = Researchers.resID
 -- rest of query
 
+--14
+SELECT  publishDate, major_topic, minor_topic,  summary, paragraphs
+FROM Author, Article
+WHERE Author.aID=Article.aID
+ORDER BY publishDate ASC;
