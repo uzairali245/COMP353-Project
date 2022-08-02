@@ -148,22 +148,69 @@ VALUES(9,null,8);
 INSERT INTO Author(aID,resID,orgID)
 VALUES(10,null,10);
 
--- to be edited
-INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
 VALUES('2022-07-17','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'Covid major', 'vaccine minor', 1,666,003,7777);
+','this is a summary', 'Covid major', 'vaccine minor', 1,1);
 
-INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
 VALUES('2022-07-16','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'something major', 'something minor', 2,666,003,7777);
+','this is a summary', 'something major', 'something minor', 2,2);
 
-INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
 VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
-','this is a summary', 'something major', 'something minor', 3,888,004,1234);
+','this is a summary', 'something major', 'something minor', 3,3);
 
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 4,3);
 
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 5,4);
 
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 6,5);
 
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 7,6);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 8,7);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 9,8);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 10,8);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 11,9);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 12,10);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 13,1);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 14,5);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 15,6);
+
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-07-15','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'something major', 'something minor', 16,7);
 
 --1
 
