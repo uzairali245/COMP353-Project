@@ -54,26 +54,27 @@ INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('Johnson & Johnson',325234,234,124312,3);
 
 
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('2','Maroua','Krim','mk@gmail.com','9833432','Canadian','researcher','1999-09-01',1);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('3','Joe','Scan','js@gmail.com','1112333','Canadian','researcher','1999-09-02',1);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('1','Laura','Maine','lm@gmail.com','4323574','Brazilian','researcher','1999-09-03',2);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('4','Cynthia','Mona','cm@gmail.com','433523','American','administrator','1999-09-04',3);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('5','Noah','Kim','nqwrqw@gmail.com','233534','Brazilian','researcher','1999-09-05',2);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('6','Martin','Kim','nwqeqw@gmail.com','6432234','Pakistani','administrator','1999-09-05',5);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('7','Noah','Scan','nertew@gmail.com','1243564','Pakistani','administrator','1999-09-05',5);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('8','Maine','Kim','nasf@gmail.com','4564534','Egyptian','administrator','1999-09-05',6);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('9','Martin','Scan','ms@gmail.com','235562','Algerian','researcher','1999-09-05',7);
-INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('10','Noah','Maine','nm@gmail.com','235226','Indian','administrator','1999-09-05',4);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('2','marouak','Maroua','Krim','mk@gmail.com','9833432','Canadian','researcher','1999-09-01',1);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('3','joes','Joe','Scan','js@gmail.com','1112333','Canadian','researcher','1999-09-02',1);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('1','lauram','Laura','Maine','lm@gmail.com','4323574','Brazilian','researcher','1999-09-03',2);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('4','cynthiam','Cynthia','Mona','cm@gmail.com','433523','American','administrator','1999-09-04',3);
+INSERT INTO Users(UserID,username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('5','noahk','Noah','Kim','nqwrqw@gmail.com','233534','Brazilian','researcher','1999-09-05',2);
+INSERT INTO Users(UserID,username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('6','martink','Martin','Kim','nwqeqw@gmail.com','6432234','Pakistani','administrator','1999-09-05',5);
+INSERT INTO Users(UserID,username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('7','noahs','Noah','Scan','nertew@gmail.com','1243564','Pakistani','administrator','1999-09-05',5);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('8','mainek','Maine','Kim','nasf@gmail.com','4564534','Egyptian','administrator','1999-09-05',6);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('9','martins','Martin','Scan','ms@gmail.com','235562','Algerian','researcher','1999-09-05',7);
+INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('10','noahm','Noah','Maine','nm@gmail.com','235226','Indian','administrator','1999-09-05',4);
+
 
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
 VALUES('12', null, null,'uyki@gmail.com','2352356','Canadian','organization delegate','1999-09-01',1);

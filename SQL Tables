@@ -27,6 +27,7 @@ FOREIGN KEY (cID) REFERENCES Countries(cID)
 
 CREATE TABLE IF NOT EXISTS Users(
 UserID INT  NOT NULL PRIMARY KEY,
+username VARCHAR(255),
 firstName VARCHAR(255),
 LastName VARCHAR(255),
 email VARCHAR(255),
@@ -112,4 +113,19 @@ resID INT,
 FOREIGN KEY (aID) REFERENCES Author(aID),
 FOREIGN KEY (UserID) REFERENCES Users(UserID),
 FOREIGN KEY (resID) REFERENCES Researcher(resID)
+);
+
+CREATE TABLE suspendedUsers(
+suspensionDate DATE,
+UserID INT  NOT NULL PRIMARY KEY,
+username VARCHAR(255),
+firstName VARCHAR(255),
+LastName VARCHAR(255),
+email VARCHAR(255),
+phone INT(15),
+Citizenship VARCHAR(255),
+userType VARCHAR(255) check (userType in ('administrator', 'researcher', 'organization delegate')), --  Privilege name could be either administrator, researcher, or organization delegate
+dob DATE,
+cID INT,
+FOREIGN KEY (cID) REFERENCES Countries(cID)
 );

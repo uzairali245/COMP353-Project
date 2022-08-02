@@ -137,7 +137,7 @@ Where cID = '13';
 DELETE FROM Country
 WHERE cID = '13';
 
------------------------Query 8
+----------------------- 8
 -- reasearcher article
 BEGIN TRANSACTION;
 INSERT INTO deletedArticle (publishDate,major_topic,minor_topic,artID,aID,UserID)
@@ -169,6 +169,25 @@ DELETE FROM Article
 WHERE artID=8;
 
 COMMIT;
+
+---------------- 9
+
+
+BEGIN TRANSACTION;
+INSERT INTO suspendedUsers (UserID,username, userType,firstName,LastName,Citizenship,email,phone, dob, cID)
+SELECT UserID, username, userType,firstName,LastName,Citizenship,email,phone, dob, cID
+FROM Users
+WHERE UserID = 10;
+
+UPDATE suspendedUsers
+SET suspensionDate = '2022-08-01'
+WHERE UserID = 10;
+
+DELETE FROM Users
+WHERE UserID=10;
+
+COMMIT;
+
 
 
 -- 11
@@ -222,6 +241,13 @@ SELECT Organisations.orgName, deletedArticle.major_topic, deletedArticle.minor_t
 FROM Author, deletedArticle, Organisations, Countries
 WHERE Author.aID = deletedArticle.aID AND Organisations.orgID = Author.orgID AND Author.cID = Countries.cID
 ORDER BY CountryName ASC, removalDate ASC;
+
+---------------- 13
+
+SELECT userType, username, firstName, LastName, Citizenship,email,phone,suspensionDate
+FROM suspendedUsers
+ORDER BY suspensionDate ASC;
+
 
 
 --14
