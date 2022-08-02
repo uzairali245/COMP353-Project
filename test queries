@@ -54,54 +54,101 @@ INSERT INTO Vaccine (vaccine_type, infected, deaths, vaccinated, cID)
 VALUES ('Johnson & Johnson',325234,234,124312,3);
 
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('2','Maroua','Krim','mk@gmail.com','1112223332','Canadian','organization delegate','1999-09-01',1);
+VALUES('2','Maroua','Krim','mk@gmail.com','9834523432','Canadian','reasercher','1999-09-01',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
 VALUES('3','Joe','Scan','js@gmail.com','1112223333','Canadian','reasercher','1999-09-02',1);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('1','Laura','Maine','lm@gmail.com','1112223331','American','organization delegate','1999-09-03',2);
+VALUES('1','Laura','Maine','lm@gmail.com','4325443574','Brazilian','reasercher','1999-09-03',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('4','Cynthia','Mona','cm@gmail.com','1112223334','Syrian','reasercher','1999-09-04',3);
+VALUES('4','Cynthia','Mona','cm@gmail.com','43523523','American','administrator','1999-09-04',3);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('5','Noah','Kim','nqwrqw@gmail.com','1112223335','English','reasercher','1999-09-05',2);
+VALUES('5','Noah','Kim','nqwrqw@gmail.com','23543534','Brazilian','reasercher','1999-09-05',2);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('6','Martin','Kim','nwqeqw@gmail.com','1112223335','English','reasercher','1999-09-05',5);
+VALUES('6','Martin','Kim','nwqeqw@gmail.com','643236234','Pakistani','administrator','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('7','Noah','Scan','nertew@gmail.com','1112223335','English','reasercher','1999-09-05',5);
+VALUES('7','Noah','Scan','nertew@gmail.com','12432564','Pakistani','administrator','1999-09-05',5);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('8','Maine','Kim','nasf@gmail.com','1112223335','English','reasercher','1999-09-05',6);
+VALUES('8','Maine','Kim','nasf@gmail.com','4564574534','Egyptian','administrator','1999-09-05',6);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('9','Martin','Scan','ms@gmail.com','1112223335','English','reasercher','1999-09-05',7);
+VALUES('9','Martin','Scan','ms@gmail.com','23523562','Algerian','reasercher','1999-09-05',7);
 INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('10','Noah','Maine','nm@gmail.com','1112223335','English','reasercher','1999-09-05',4);
+VALUES('10','Noah','Maine','nm@gmail.com','23543226','Indian','administrator','1999-09-05',4);
 
--- to be edited yet
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('12', null, null,'uyki@gmail.com','2352356','Canadian','organization delegate','1999-09-01',1);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('13',null, null,'uiolli@gmail.com','1234325346','Canadian','organization delegate','1999-09-02',1);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('11',null, null,'uio@gmail.com','64376756','Brazilian','organization delegate','1999-09-03',2);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('14',null, null,'uiou@gmail.com','9879078767','American','organization delegate','1999-09-04',3);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('15',null, null,'uiol@gmail.com','54635435','Brazilian','organization delegate','1999-09-05',2);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('16',null, null,'uil@gmail.com','2354364537','Pakistani','organization delegate','1999-09-05',5);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('17',null, null,'uio@gmail.com','34654745','Pakistani','organization delegate','1999-09-05',5);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('18',null, null,'uiol@gmail.com','235463463','Egyptian','organization delegate','1999-09-05',6);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('19',null, null,'gjghg@gmail.com','2353425346','Algerian','organization delegate','1999-09-05',7);
+INSERT INTO Users(UserID, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
+VALUES('20',null, null,'rtgdk@gmail.com','235436674','Indian','organization delegate','1999-09-05',4);
 
-INSERT INTO Organisations(orgID, orgName, orgType, UserID, resID, aID)
-VALUES(0001, 'RandomOrgName', 'company', 001,null , null);
-INSERT INTO Organisations(orgID, orgName, orgType, UserID, resID, aID)
-VALUES(0002, 'WholesomeOrg', 'research center', 002,null , null);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(1, 'Canada agency', 'company', 12);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(2, 'WholesomeOrg', 'research center', 13);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(3, 'Brazil agency', 'research center', 11);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(4, 'USA agency', 'research center', 14);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(5, 'WholesomeOrg', 'research center', 15);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(6, 'Pakistan agency', 'research center', 16);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(7, 'WholesomeOrg', 'research center', 17);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(8, 'Egypt agency', 'research center', 18);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(9, 'Algeria agency', 'research center', 19);
+INSERT INTO Organisations(orgID, orgName, orgType, UserID)
+VALUES(10, 'India agency', 'research center', 20);
 
+INSERT INTO Researcher(resID,orgID,UserID)
+VALUES(1,3,1);
+INSERT INTO Researcher(resID,orgID,UserID)
+VALUES(2,1,2);
+INSERT INTO Researcher(resID,orgID,UserID)
+VALUES(3,5,3);
+INSERT INTO Researcher(resID,orgID,UserID)
+VALUES(5,6,4);
+INSERT INTO Researcher(resID,orgID,UserID)
+VALUES(9,9,5);
 
-INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Joe Smith', 666 ,7777,null);
-INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Cynthia Mona', 888 , 1234, null);
-INSERT INTO Author(authorName,aID,resID,orgID)
-VALUES('Noah Kim', 999 , 9999, null);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(1,1,3);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(2,2,1);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(3,3,5);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(4,5,6);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(5,9,9);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(6,null,2);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(7,null,4);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(8,null,7);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(9,null,8);
+INSERT INTO Author(aID,resID,orgID)
+VALUES(10,null,10);
 
-
-
-INSERT INTO Researcher(resID,aID,UserID)
-VALUES(1234,null,004);
-INSERT INTO Researcher(resID,aID,UserID)
-VALUES(7777,null,003);
-INSERT INTO Researcher(resID,aID,UserID)
-VALUES(9999,null,005);
-
-
-
-
-
+-- to be edited
 INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID,UserID,resID)
 VALUES('2022-07-17','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
 ','this is a summary', 'Covid major', 'vaccine minor', 1,666,003,7777);
