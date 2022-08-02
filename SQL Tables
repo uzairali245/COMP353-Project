@@ -17,7 +17,7 @@ FOREIGN KEY (rID) REFERENCES Regions(rID)
 );
 
 CREATE TABLE IF NOT EXISTS Vaccine(
-vaccineType VARCHAR(255)  NOT NULL PRIMARY KEY,
+vaccine_type VARCHAR(255)  NOT NULL PRIMARY KEY,
 infected INT,
 deaths INT,
 vaccinated INT,
