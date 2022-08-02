@@ -59,7 +59,7 @@ VALUES('2','marouak','Maroua','Krim','mk@gmail.com','9833432','Canadian','resear
 INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
 VALUES('3','joes','Joe','Scan','js@gmail.com','1112333','Canadian','researcher','1999-09-02',1);
 INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
-VALUES('1','lauram','Laura','Maine','lm@gmail.com','4323574','Brazilian','researcher','1999-09-03',2);
+VALUES('1','lauram','Laura','Maine','lm@gmail.com','4323574','Brazilian','administrator','1999-09-03',2);
 INSERT INTO Users(UserID, username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)
 VALUES('4','cynthiam','Cynthia','Mona','cm@gmail.com','433523','American','administrator','1999-09-04',3);
 INSERT INTO Users(UserID,username, firstName,LastName,email,phone,Citizenship,userType,dob,cID)

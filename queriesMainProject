@@ -154,7 +154,7 @@ WHERE artID=1;
 
 COMMIT;
 
--- organization article
+-- organization article (not an admin but useful for query 12)
 BEGIN TRANSACTION;
 INSERT INTO deletedArticle (publishDate,major_topic,minor_topic,artID,aID,UserID,resID)
 SELECT publishDate,major_topic,minor_topic,artID,aID,UserID,resID
@@ -172,7 +172,7 @@ COMMIT;
 
 ---------------- 9
 
-
+-- suspend
 BEGIN TRANSACTION;
 INSERT INTO suspendedUsers (UserID,username, userType,firstName,LastName,Citizenship,email,phone, dob, cID)
 SELECT UserID, username, userType,firstName,LastName,Citizenship,email,phone, dob, cID
@@ -188,6 +188,23 @@ WHERE UserID=10;
 
 COMMIT;
 
+-- activate
+BEGIN TRANSACTION;
+INSERT INTO Users (UserID,username, userType,firstName,LastName,Citizenship,email,phone, dob, cID)
+SELECT UserID, username, userType,firstName,LastName,Citizenship,email,phone, dob, cID
+FROM suspendedUsers
+WHERE UserID = 10;
+
+DELETE FROM suspendedUsers
+WHERE UserID=10;
+
+COMMIT;
+
+-------------- 10
+
+SELECT userType, username, firstName, LastName, Citizenship,email,phone
+FROM Users
+ORDER BY userType ASC, Citizenship;
 
 
 -- 11
