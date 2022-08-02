@@ -137,6 +137,28 @@ Where cID = '13';
 DELETE FROM Country
 WHERE cID = '13';
 
+
+
+------------------------ 7
+
+-- create an article
+INSERT INTO Article(publishDate,paragraphs,summary,major_topic,minor_topic,artID,aID)
+VALUES('2022-08-01','Yatenin ogu fe. Emayo ra ce ieracatiet newop ecali cetot tolam conewo. Ruv edase saret tene ta. Pi ne lay odinec.
+','this is a summary', 'this is a major topic', 'this is a minor topic', 17,2);
+
+-- delete an article (a better way can be found in query 8 so the deleted article is not forever lost)
+DELETE FROM Article
+WHERE artID = 17;
+
+-- edit an article (ex: editing the summary)
+UPDATE Article
+SET summary = 'this is an edited summary'
+WHERE artID = 16;
+
+-- display an article
+SELECT *
+FROM Article;
+
 ----------------------- 8
 -- reasearcher article
 BEGIN TRANSACTION;
