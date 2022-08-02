@@ -38,18 +38,6 @@ cID INT,
 FOREIGN KEY (cID) REFERENCES Countries(cID)
 );
 
-CREATE TABLE IF NOT EXISTS Article(
-publishDate DATE,
-paragraphs VARCHAR(255),
-summary CHAR(100),
-major_topic VARCHAR(255),
-minor_topic VARCHAR(255),
-aDiscription CHAR(100),
-artID INT NOT NULL PRIMARY KEY,
-aID INT,
-FOREIGN KEY (aID) REFERENCES Author(aID)
-);
-
 CREATE TABLE IF NOT EXISTS Organisations(
 orgID INT  NOT NULL PRIMARY KEY,
 orgName VARCHAR(255),
@@ -66,12 +54,7 @@ CREATE TABLE IF NOT EXISTS Researcher(
   FOREIGN KEY (orgID) REFERENCES Organisations(orgID)
 );
 
-CREATE TABLE IF NOT EXISTS UserAuthorNotification(
-UserID INT,
-aID INT,
-FOREIGN KEY (UserID) REFERENCES Users(UserID),
-FOREIGN KEY (aID) REFERENCES Author(aID)
-);
+
 
 CREATE TABLE IF NOT EXISTS Author(
 aID INT NOT NULL PRIMARY KEY,
@@ -79,3 +62,21 @@ resID INT,
 orgID INT
 );
 
+CREATE TABLE IF NOT EXISTS Article(
+publishDate DATE,
+paragraphs VARCHAR(255),
+summary CHAR(100),
+major_topic VARCHAR(255),
+minor_topic VARCHAR(255),
+aDiscription CHAR(100),
+artID INT NOT NULL PRIMARY KEY,
+aID INT,
+FOREIGN KEY (aID) REFERENCES Author(aID)
+);
+
+CREATE TABLE IF NOT EXISTS UserAuthorNotification(
+UserID INT,
+aID INT,
+FOREIGN KEY (UserID) REFERENCES Users(UserID),
+FOREIGN KEY (aID) REFERENCES Author(aID)
+);
