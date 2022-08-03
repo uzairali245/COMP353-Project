@@ -1,0 +1,75 @@
+
+-- #10
+SELECT user_type, username, first_name, last_name, citizenship, email,  phone FROM users ORDER BY user_type AND citizenship;
+
+
+-- #11
+SELECT u.first_name, u.last_name, a.major_topic, a.minor_topic, a.publish_date, u.citizenship  FROM articles as a
+JOIN users as u ON a.userID = u.userID;
+
+
+
+-- #12
+SELECT u.first_name, u.last_name, a.major_topic, a.minor_topic, a.publish_date, u.citizenship
+FROM articles as a 
+JOIN users as u ON u.userID = a.userID
+JOIN authors as au ON u.userID = au.userID
+WHERE a.status = 0;
+
+-- #13
+
+SELECT user_type,username,last_name,first_name,citizenship,email,phone,suspension_date
+FROM users
+WHERE users.status = 0
+ORDER BY users.suspension_date ASC;
+
+
+SELECT  publish_date, major_topic, minor_topic, summary, discription
+FROM  articles
+ORDER BY publish_date ASC;
+
+-- #15
+SELECT u.first_name, u.last_name, count(art.artID), u.citizenship
+FROM articles as art
+JOIN users as u ON art.userID = u.userID
+JOIN authors as a ON a.userID = u.userID
+GROUP BY a.aID
+ORDER BY count(art.artID) DESC;
+
+#16
+select concat_ws(',',c.country_name, c.region_name) as 'Country & Region', count(a.aID) as 'Total Author', count(art.artID) as 'Total Articles'
+from countries as c
+JOIN users as u on c.cID = u.cID
+JOIN authors as a on a.userID = u.userID
+JOIN articles as art on art.userID = u.userID;
+
+
+select c.region_name, c.country_name, count(art.artID), count(a.aID)
+from countries as c
+JOIN users as u on c.cID = u.cID
+JOIN authors as a on a.userID = u.userID
+JOIN articles as art on art.aID = a.aID
+group by c.country_name
+order by c.region_name asc, count(art.artID) desc;
+
+
+#17
+SELECT country.region_name, country.country_name, country.populations, country.vaccinated, country.deaths
+FROM Countries as country
+GROUP BY country.country_name
+ORDER BY count(country.deaths) ASC;
+
+
+#18
+SELECT e.sent_date, e.email, e.subject
+FROM emails as e
+ORDER BY e.sent_date DESC;
+
+
+#19
+SELECT c.report_date, c.populations, c.vaccinated, c.infected, c.deaths
+FROM countries as c
+WHERE c.country_name = 'Canada' 
+ORDER BY c.report_date DESC;
+
+

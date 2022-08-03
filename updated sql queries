@@ -1,7 +1,0 @@
-query 10 
-SELECT user_type, username, first_name, last_name, citizenship, email,  phone FROM users ORDER BY user_type AND citizenship;
-
-query 14 
-SELECT  publish_date, major_topic, minor_topic, summary, discription
-FROM  articles
-ORDER BY publish_date ASC; 
